@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: o;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #131313;
+}
+
+.share-btn{
+    padding: 12px 40px;
+    background-color: #ff7a00;
+    position: relative;
+    font-family: 'poppins',sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+
+.social-media-list{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ff7a00;
+    padding: 12px 30px;
+    border-radius: 100px;
+    left: 50%;
+    transform: scale(0)translateX(-50%);
+    transform-origin: 0% 100%;
+    top: -150%;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+
+.share-btn::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: #ff7a00;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    transition: all 0.3s;
+}
+
+.social-media-list li:not(:last-child){
+    margin-right: 20px;
+}
+
+
+.social-media-list li a {
+    display: inline-block;
+    color: #ff7a00;
+    transition: all 0.3s;
+}
+
+.social-media-list li a:hover {
+    transform: scale(1.2);
+}
+
+.share-btn.clicked .social-media-list {
+    transform: scale(1)translateX(-50%);
+    transition-delay: 0.2s;
+}
+
+.share-btn.share-btn.clicked::before{
+    height: 25px;
+}
